@@ -11,7 +11,7 @@ def categorize_ui_component(row):
     is_vector = bool(row.get('type_VECTOR', 0))
     is_component = bool(row.get('type_COMPONENT', 0))
     is_rectangle = bool(row.get('type_RECTANGLE', 0))
-
+    is_text = bool(row.get('type_RECTANGLE', 0))
     stroke_weight = row.get('strokeWeight', 0)
 
     # Corner radius handling
