@@ -22,7 +22,7 @@ def build_frame_tree_json(file_data, output_json_file="ui_tree_output.json"):
 
     output = {
         "total_processing_time_sec": round(total_processing_time, 4),
-        "ui_tree": tree
+        # "ui_tree": tree
     }
 
     with open(output_json_file, "w", encoding="utf-8") as f:
