@@ -21,7 +21,7 @@ def build_frame_tree_json(file_data, output_json_file="ui_tree_output.json"):
     total_processing_time = sum_processing_time(tree)
 
     output = {
-        "total_processing_time_sec": round(total_processing_time, 4),
+        # "total_processing_time_sec": round(total_processing_time, 4),
         # "ui_tree": tree
     }
 
