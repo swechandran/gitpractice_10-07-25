@@ -76,8 +76,8 @@ def categorize_ui_component(row):
     if width <= 20 and height <= 20:
         return 'icon'
 
-    if height >= 20 and width >= 50:
-        return 'textbox'
+    # if height >= 20 and width >= 50:
+    #     return 'textbox'
 
     return 'other'
 
