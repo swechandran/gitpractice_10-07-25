@@ -67,14 +67,14 @@ def categorize_ui_component(row):
         layout_horizontal):
         return 'file upload'
 
-    if ((is_frame or name.startswith('frame')) and width > 200 and height > 100):
-        return 'div'
+    # if ((is_frame or name.startswith('frame')) and width > 200 and height > 100):
+    #     return 'div'
 
-    if (is_frame or name.startswith('frame')) and 20 <= height <= 80 and 100 <= width <= 500:
-        return 'textbox'
+    # if (is_frame or name.startswith('frame')) and 20 <= height <= 80 and 100 <= width <= 500:
+    #     return 'textbox'
 
-    if width <= 20 and height <= 20:
-        return 'icon'
+    # if width <= 20 and height <= 20:
+    #     return 'icon'
 
     # if height >= 20 and width >= 50:
     #     return 'textbox'
