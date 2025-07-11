@@ -69,12 +69,12 @@ def main():
     # df_detected = run_ui_detection(step2_csv, step3_csv)
     # print(f"[INFO] Step 3 complete: {step3_csv}")
 
-    step4_csv = os.path.join(output_dir, "step4-Encoded_Data.csv")
-    df_encoded, _ = run_data_encoding(step1_csv, step4_csv)
-    print(f"[INFO] Step 4 complete: {step4_csv}")
+    # step4_csv = os.path.join(output_dir, "step4-Encoded_Data.csv")
+    # df_encoded, _ = run_data_encoding(step1_csv, step4_csv)
+    # print(f"[INFO] Step 4 complete: {step4_csv}")
 
     step5_csv = os.path.join(output_dir, "step5-final_encoded_data.csv")
-    df_final_encoded, _ = run_data_encoding(step4_csv, step5_csv)
+    df_final_encoded, _ = run_data_encoding(step1_csv, step5_csv)
     print(f"[INFO] Step 5 complete: {step5_csv}")
 
     step6_csv = os.path.join(output_dir, "step6-final_dataset.csv")
