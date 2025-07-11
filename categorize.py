@@ -24,48 +24,48 @@ def categorize_ui_component(row):
 
     # ----- UI Type Classification -----
 
-    if any(k in name for k in ['image', 'img', 'logo', 'icon', 'photo', 'picture', 'mcu-logo', 'user', 'comment']) or \
-       (is_vector and height > 10 and width > 10 and abs(height - width) <= max(height, width) * 0.3):
-        return 'image'
+    # if any(k in name for k in ['image', 'img', 'logo', 'icon', 'photo', 'picture', 'mcu-logo', 'user', 'comment']) or \
+    #    (is_vector and height > 10 and width > 10 and abs(height - width) <= max(height, width) * 0.3):
+    #     return 'image'
 
-    if any(k in name for k in ['checkbox', 'check', 'tick', 'select', 'option', 'choice']) or \
-       ((is_frame or is_group or is_vector or is_rectangle) and
-        10 <= height <= 30 and 10 <= width <= 30 and
-        (corner_radius <= 2 or corner_radius >= height / 2 - 2)):
-        return 'checkbox'
+    # if any(k in name for k in ['checkbox', 'check', 'tick', 'select', 'option', 'choice']) or \
+    #    ((is_frame or is_group or is_vector or is_rectangle) and
+    #     10 <= height <= 30 and 10 <= width <= 30 and
+    #     (corner_radius <= 2 or corner_radius >= height / 2 - 2)):
+    #     return 'checkbox'
 
-    if any(k in name for k in ['radio', 'option', 'circle', 'round', 'select']) or \
-       ((is_frame or is_group or is_vector or is_rectangle) and
-        10 <= height <= 30 and 10 <= width <= 30 and
-        corner_radius >= height / 2 - 2):
-        return 'radio button'
+    # if any(k in name for k in ['radio', 'option', 'circle', 'round', 'select']) or \
+    #    ((is_frame or is_group or is_vector or is_rectangle) and
+    #     10 <= height <= 30 and 10 <= width <= 30 and
+    #     corner_radius >= height / 2 - 2):
+    #     return 'radio button'
 
-    if any(k in name for k in ['button', 'btn', 'cta', 'action', 'pagination', 'angle-']) or \
-       ((is_frame or is_component or is_rectangle) and
-        20 <= height <= 100 and 50 <= width <= 400 and
-        (corner_radius > 0 or stroke_weight > 0)):
-        return 'button'
+    # if any(k in name for k in ['button', 'btn', 'cta', 'action', 'pagination', 'angle-']) or \
+    #    ((is_frame or is_component or is_rectangle) and
+    #     20 <= height <= 100 and 50 <= width <= 400 and
+    #     (corner_radius > 0 or stroke_weight > 0)):
+    #     return 'button'
 
-    if any(k in name for k in ['textbox', 'input', 'field', 'textfield', 'search']) or \
-       ((is_frame or is_rectangle) and
-        20 <= height <= 60 and 80 <= width <= 500 and
-        stroke_weight > 0):
-        return 'textbox'
+    # if any(k in name for k in ['textbox', 'input', 'field', 'textfield', 'search']) or \
+    #    ((is_frame or is_rectangle) and
+    #     20 <= height <= 60 and 80 <= width <= 500 and
+    #     stroke_weight > 0):
+    #     return 'textbox'
 
-    if any(k in name for k in ['dropdown', 'select', 'menu', 'combobox', 'vendor']) or \
-       ((is_frame or is_rectangle) and
-        30 <= height <= 300 and 100 <= width <= 400 and
-        layout_vertical):
-        return 'dropdown'
+    # if any(k in name for k in ['dropdown', 'select', 'menu', 'combobox', 'vendor']) or \
+    #    ((is_frame or is_rectangle) and
+    #     30 <= height <= 300 and 100 <= width <= 400 and
+    #     layout_vertical):
+    #     return 'dropdown'
 
-    if any(k in name for k in ['date', 'calendar', 'picker']):
-        return 'date picker'
+    # if any(k in name for k in ['date', 'calendar', 'picker']):
+    #     return 'date picker'
 
-    if any(k in name for k in ['upload', 'file', 'attach', 'clip', 'path']) or \
-       ((is_frame or is_rectangle) and
-        40 <= height <= 150 and 150 <= width <= 600 and
-        layout_horizontal):
-        return 'file upload'
+    # if any(k in name for k in ['upload', 'file', 'attach', 'clip', 'path']) or \
+    #    ((is_frame or is_rectangle) and
+    #     40 <= height <= 150 and 150 <= width <= 600 and
+    #     layout_horizontal):
+    #     return 'file upload'
 
     # if ((is_frame or name.startswith('frame')) and width > 200 and height > 100):
     #     return 'div'
