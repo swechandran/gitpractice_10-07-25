@@ -56,21 +56,21 @@ def main():
     print(f"[INFO] Step 1 complete: {step1_csv}")
 
     # Step 2: Categorization
-    step2_csv = os.path.join(output_dir, "step2-Categorized_Components.csv")
-    df_categorized = run_ui_categorization(step1_csv, step2_csv)
+    # step2_csv = os.path.join(output_dir, "step2-Categorized_Components.csv")
+    # df_categorized = run_ui_categorization(step1_csv, step2_csv)
 
 
-    print(f"[INFO] Step 2 complete: {step2_csv}")
+    # print(f"[INFO] Step 2 complete: {step2_csv}")
 
-    # Build prediction_lookup from step2
-    prediction_lookup = dict(zip(df_categorized["id"], df_categorized["ui_component"]))
+    # # Build prediction_lookup from step2
+    # prediction_lookup = dict(zip(df_categorized["id"], df_categorized["ui_component"]))
 
-    step3_csv = os.path.join(output_dir, "step3-attributes_regex_matchingpercent.csv")
-    df_detected = run_ui_detection(step2_csv, step3_csv)
-    print(f"[INFO] Step 3 complete: {step3_csv}")
+    # step3_csv = os.path.join(output_dir, "step3-attributes_regex_matchingpercent.csv")
+    # df_detected = run_ui_detection(step2_csv, step3_csv)
+    # print(f"[INFO] Step 3 complete: {step3_csv}")
 
     step4_csv = os.path.join(output_dir, "step4-Encoded_Data.csv")
-    df_encoded, _ = run_data_encoding(step3_csv, step4_csv)
+    df_encoded, _ = run_data_encoding(step1_csv, step4_csv)
     print(f"[INFO] Step 4 complete: {step4_csv}")
 
     step5_csv = os.path.join(output_dir, "step5-final_encoded_data.csv")
@@ -92,7 +92,7 @@ def main():
 
         tree = []
         for node in top_nodes:
-            tree.append(process_node_for_tree(node, file_id, prediction_lookup=prediction_lookup))
+            tree.append(process_node_for_tree(node, file_id))
 
         total_time = calculate_total_time(tree)
 
