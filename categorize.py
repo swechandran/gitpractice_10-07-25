@@ -103,6 +103,7 @@ def run_ui_categorization(input_csv_path, output_csv_path):
     df['ui_component'] = df.apply(categorize_ui_component, axis=1)
     df.to_csv(output_csv_path, index=False)
     return df
+    return true
 
 # import pandas as pd
 
