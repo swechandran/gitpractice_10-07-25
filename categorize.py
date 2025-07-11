@@ -81,6 +81,19 @@ def categorize_ui_component(row):
 
     return 'other'
 
+def categorize_ui_component(row):
+    name = str(row.get('name', '')).lower()
+    width = row.get('absoluteBoundingBox_width', 0)
+    height = row.get('absoluteBoundingBox_height', 0)
+
+    # Type flags (fallback to 0 if missing)
+    is_frame = bool(row.get('type_FRAME', 0))
+    is_group = bool(row.get('type_GROUP', 0))
+    is_vector = bool(row.get('type_VECTOR', 0))
+    is_component = bool(row.get('type_COMPONENT', 0))
+    is_rectangle = bool(row.get('type_RECTANGLE', 0))
+    is_text = bool(row.get('type_RECTANGLE', 0))
+    stroke_weight = row.get('strokeWeight', 0)
 
 def run_ui_categorization(input_csv_path, output_csv_path):
     df = pd.read_csv(input_csv_path)
